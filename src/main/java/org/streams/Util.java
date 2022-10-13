@@ -39,9 +39,19 @@ public class Util {
                 .collect(Collectors.toList());
     }
 
+    public static List<Employee> sortEmployeesListByNameAndSalary(List<Employee> employees) {
+        return employees.stream()
+                .sorted(Comparator.comparing(Employee::getName).thenComparing(Employee::getSalary))
+                .collect(Collectors.toList());
+    }
+
     public static Employee findWithMaxSalary(List<Employee> employees) {
         return employees.stream()
                 .max(Comparator.comparing(Employee::getSalary)).orElse(null);
+    }
+    public static void findAndPrintWithMaxSalary(List<Employee> employees) {
+        employees.stream()
+                .max(Comparator.comparing(Employee::getSalary)).ifPresent(System.out::println);
     }
 
     public static Employee findWithMinSalary(List<Employee> employees) {

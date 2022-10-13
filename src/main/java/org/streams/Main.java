@@ -16,7 +16,9 @@ public class Main {
         printSpecialists(sortEmployeesListByNameAsc(getEmployees()));
         System.out.println("===================");
         printSpecialists(sortEmployeesListByNameDesc(getEmployees()));
-
+        System.out.println("===================");
+        //sorting by name and salary
+        printSpecialists(sortEmployeesListByNameAndSalary(getEmployees()));
     }
 
     public static void main3(String[] args) {
@@ -24,6 +26,8 @@ public class Main {
         System.out.println((findWithMaxSalary(getEmployees())));
         System.out.println("===================");
         System.out.println((findWithMinSalary(getEmployees())));
+        System.out.println("===================");
+        findAndPrintWithMaxSalary(getEmployees());
     }
 
     public static void main4(String[] args) {
@@ -40,7 +44,7 @@ public class Main {
         System.out.println(matchAnyEngineer(getEmployees()));
     }
 
-    public static void main(String[] args) {
+    public static void main6(String[] args) {
         // no one with salary more than?
         System.out.println(matchNoneSalaryMoreThen(getEmployees(), 12000.0));
         System.out.println("===========================");
